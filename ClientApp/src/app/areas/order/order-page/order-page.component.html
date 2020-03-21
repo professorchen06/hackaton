@@ -11,7 +11,7 @@
 
       <section class="section" *ngSwitchCase="states.Overview">
         <div class="overview-wrapper">
-          <app-item-list></app-item-list>
+          <app-item-list [order]="order"></app-item-list>
           <!-- Bestellbestätigung BEGIN -->
           <button (click)="openDialog()" mat-raised-button>Jetzt bestellen!</button>
           <div *ngIf="confirmedOrder">Order Confirmed</div>
