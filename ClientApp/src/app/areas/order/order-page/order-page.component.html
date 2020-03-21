@@ -2,7 +2,7 @@
   <ng-container *ngIf="state | async as state">
     <div class="container" [ngSwitch]="state">
       <section class="section" *ngSwitchCase="states.Unknown">
-<!--        <p>Loading State</p>-->
+        <p>Loading State</p>
       </section>
 
       <section class="section" *ngSwitchCase="states.ProductSelection">
@@ -10,7 +10,13 @@
       </section>
 
       <section class="section" *ngSwitchCase="states.Overview">
-        <app-list-item></app-list-item>
+        <div class="overview-wrapper">
+          <app-item-list></app-item-list>
+          <!-- Bestellbestätigung BEGIN -->
+          <button (click)="openDialog()" mat-raised-button>Jetzt bestellen!</button>
+          <div *ngIf="confirmedOrder">Order Confirmed</div>
+          <!-- Bestellbestätigung END -->
+        </div>
       </section>
 
       <section class="section" *ngSwitchCase="states.Complete">
@@ -18,9 +24,4 @@
       </section>
     </div>
   </ng-container>
-  <!-- Bestellbestätigung BEGIN -->
-  <button (click)="openDialog()" mat-raised-button>Jetzt bestellen!</button>
-  <div *ngIf="confirmedOrder">Order Confirmed</div>
-  <!-- Bestellbestätigung END -->
 </div>
-<app-item-list></app-item-list>

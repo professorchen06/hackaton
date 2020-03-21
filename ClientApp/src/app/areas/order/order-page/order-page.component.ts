@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Order, OrderItem } from '../order.model';
 import { OrderStates, OrderStateService } from './order-state.service';
@@ -10,7 +10,7 @@ import { ConfirmOrderModalContentComponent } from '../confirm-order-modal-conten
   templateUrl: './order-page.component.html',
   styleUrls: ['./order-page.component.scss'],
 })
-export class OrderPageComponent {
+export class OrderPageComponent implements AfterViewInit{
   states = OrderStates;
   readonly state: Observable<OrderStates>;
 
@@ -26,6 +26,12 @@ export class OrderPageComponent {
   ) {
     this.state = orderStateService.observable();
   }
+
+  ngAfterViewInit(): void {
+    this.orderStateService.startCheckout();
+  }
+
+
 
   startCheckout() {
     this.orderStateService.startCheckout();
