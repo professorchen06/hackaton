@@ -6,7 +6,7 @@
       </section>
 
       <section class="section" *ngSwitchCase="states.ProductSelection">
-        <p>ProductSelection State</p>
+        <app-order-form (addOrderItem)="addOrderItem($event)"></app-order-form>
       </section>
 
       <section class="section" *ngSwitchCase="states.Overview">
@@ -20,3 +20,4 @@
   </ng-container>
   <app-item-list></app-item-list>
 </div>
+

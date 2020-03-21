@@ -6,7 +6,7 @@ export interface Order {
 export interface OrderItem {
   id?: number;
   product: string;
-  itmes: number;
+  items: number;
   maxPricePerItem: number;
   comment: string;
 }

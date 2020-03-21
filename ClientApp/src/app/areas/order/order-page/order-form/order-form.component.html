@@ -1,1 +1,28 @@
-
+<form *ngIf="form" [formGroup]="form">
+  <div>
+    <label>
+      Produkt:
+      <input type="text" formControlName="product">
+    </label>
+  </div>
+  <div>
+    <label>
+      Anzahl:
+      <input type="text" formControlName="items">
+    </label>
+  </div>
+  <div>
+    <label>
+      Stückpreis:
+      <input type="text" formControlName="maxPricePerItem">
+    </label>
+  </div>
+  <div>
+    <label>
+      Kommentar:
+      <textarea formControlName="comment"></textarea>
+    </label>
+  </div>
+</form>
+<button (click)="cancel()">Abbrechen</button>
+<button (click)="addOrderPosition()" [disabled]="form.invalid">Hinzufügen</button>

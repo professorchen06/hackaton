@@ -23,4 +23,16 @@ export class OrderStateService {
       startWith(OrderStates.Unknown),
     );
   }
+
+  startProductSelection() {
+    this.currentState.next(OrderStates.ProductSelection);
+  }
+
+  startCheckout() {
+    this.currentState.next(OrderStates.Overview);
+  }
+
+  completeOrder() {
+    this.currentState.next(OrderStates.Complete);
+  }
 }
