@@ -7,6 +7,7 @@ import {LoadingBarHttpClientModule} from '@ngx-loading-bar/http-client';
 import {LoadingBarRouterModule} from '@ngx-loading-bar/router';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import {BackendApiModule} from './core/backend-api/backend-api.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,8 @@ import {AppComponent} from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
+    BackendApiModule,
 
     LoadingBarHttpClientModule,
     LoadingBarRouterModule,
