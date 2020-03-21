@@ -10,7 +10,7 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BackendApiModule } from './core/backend-api/backend-api.module';
-import { LayoutComponent } from './layout/layout.component';
+import { NavigationComponent } from './navigation/navigation.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table'
@@ -18,7 +18,7 @@ import { MatTableModule } from '@angular/material/table'
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
