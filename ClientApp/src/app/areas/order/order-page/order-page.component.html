@@ -18,5 +18,8 @@
       </section>
     </div>
   </ng-container>
+  <!-- Bestellbestätigung BEGIN -->
+  <button (click)="openDialog()" mat-raised-button>Jetzt bestellen!</button>
+  <div *ngIf="confirmedOrder">Order Confirmed</div>
+  <!-- Bestellbestätigung END -->
 </div>
-
