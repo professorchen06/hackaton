@@ -5,13 +5,13 @@ import { OrderAreaRoutingModule } from './order-area-routing.module';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { OrderFormComponent } from './order-page/order-form/order-form.component';
 import { ConfirmOrderModalContentComponent } from './confirm-order-modal-content/confirm-order-modal-content.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ItemListComponent } from 'src/app/item-list/item-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   imports: [
     OrderAreaRoutingModule,
@@ -25,7 +25,7 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
     MatButtonModule,
     MatDialogModule,
   ],
-  declarations: [OrderPageComponent, OrderFormComponent, ItemListComponent],
+  declarations: [OrderPageComponent, OrderFormComponent, ItemListComponent, ConfirmOrderModalContentComponent],
 })
 export class OrderAreaModule {
 }
