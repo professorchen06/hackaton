@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OrderItem } from '../../order.model';
+import { OrderStateService } from '../order-state.service';
 
 @Component({
   selector: 'app-order-form',
@@ -14,7 +15,8 @@ export class OrderFormComponent implements OnInit {
   @Output() addOrderItem = new EventEmitter<OrderItem>();
 
   constructor(
-    private readonly formBuilder: FormBuilder
+    private readonly formBuilder: FormBuilder,
+    private readonly orderStateService: OrderStateService
   ) { }
 
   ngOnInit(): void {
@@ -32,10 +34,11 @@ export class OrderFormComponent implements OnInit {
   }
 
   cancel(): void {
-
+    this.orderStateService.startCheckout();
   }
 
   addOrderPosition(): void {
     this.addOrderItem.emit(this.form.value);
+    this.orderStateService.startCheckout();
   }
 }
