@@ -3,3 +3,8 @@
   grid-auto-rows: auto;
 }
 
+.button-wrapper {
+  display: grid;
+  grid-template-columns: 56px 56px;
+  grid-column-gap: 8px;
+}

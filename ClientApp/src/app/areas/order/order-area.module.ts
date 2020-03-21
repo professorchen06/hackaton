@@ -12,6 +12,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   imports: [
     OrderAreaRoutingModule,
@@ -24,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatSortModule,
     MatButtonModule,
     MatDialogModule,
+    MatIconModule,
   ],
   declarations: [OrderPageComponent, OrderFormComponent, ItemListComponent, ConfirmOrderModalContentComponent],
 })

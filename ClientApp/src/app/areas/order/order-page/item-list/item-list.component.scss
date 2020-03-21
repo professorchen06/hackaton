@@ -1,3 +1,9 @@
+:host {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-row-gap: 8px;
+}
+
 table {
     width: 100%;
 }
