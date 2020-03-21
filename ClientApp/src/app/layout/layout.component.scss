@@ -6,13 +6,19 @@ header {
   color: #fff;
   align-items: center;
 
-  .app-name {
+  a.app-name {
     font-size: 22px;
+    color: #fff;
+    text-decoration: none;
   }
 
+  a.nav-bar {
+    text-decoration: none;
+  }
   
-  nav {
+  .nav {
     margin-left: auto;
+
 
     .menu-button {
       background: none;
