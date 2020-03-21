@@ -28,7 +28,7 @@ export class OrderFormComponent implements OnInit {
         product: ['', Validators.required],
         items: [0, [Validators.required, Validators.min(1)]],
         maxPricePerItem: [0, Validators.required],
-        comment: ['', Validators.required],
+        comment: ['', []],
       }
     );
   }
