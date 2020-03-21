@@ -13,6 +13,7 @@ import { BackendApiModule } from './core/backend-api/backend-api.module';
 import { LayoutComponent } from './layout/layout.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table'
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatDialogModule,
     MatButtonModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

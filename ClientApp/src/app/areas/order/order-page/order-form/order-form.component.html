@@ -1,27 +1,21 @@
 <form *ngIf="form" [formGroup]="form">
-  <div>
-    <label>
-      Produkt:
-      <input type="text" formControlName="product">
-    </label>
-  </div>
-  <div>
-    <label>
-      Anzahl:
-      <input type="text" formControlName="items">
-    </label>
-  </div>
-  <div>
-    <label>
-      Stückpreis:
-      <input type="text" formControlName="maxPricePerItem">
-    </label>
-  </div>
-  <div>
-    <label>
-      Kommentar:
-      <textarea formControlName="comment"></textarea>
-    </label>
+  <div class="form-wrapper">
+    <mat-form-field>
+      <mat-label>Produkt</mat-label>
+      <input matInput type="text" formControlName="product">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Anzahl</mat-label>
+      <input matInput type="text" formControlName="items">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Stückpreis</mat-label>
+      <input matInput type="text" formControlName="maxPricePerItem">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Kommentar</mat-label>
+      <textarea rows="5" matInput formControlName="comment"></textarea>
+    </mat-form-field>
   </div>
 </form>
 <button (click)="cancel()">Abbrechen</button>
