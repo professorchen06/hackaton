@@ -1,5 +1,6 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {OrderPageComponent} from './order-page.component';
+import {OrderStateService} from './order-state.service';
 
 describe('OrderPageComponent', () => {
   let component: OrderPageComponent;
@@ -8,6 +9,7 @@ describe('OrderPageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [OrderPageComponent],
+      providers: [OrderStateService],
     })
     .compileComponents();
   }));

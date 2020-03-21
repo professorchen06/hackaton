@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OrderAreaRoutingModule} from './order-area-routing.module';
 import {OrderPageComponent} from './order-page/order-page.component';
-
+import { OrderFormComponent } from './order-page/order-form/order-form.component';
 
 @NgModule({
   imports: [
@@ -12,7 +12,10 @@ import {OrderPageComponent} from './order-page/order-page.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  declarations: [OrderPageComponent],
+  declarations: [OrderPageComponent, OrderFormComponent],
+  exports: [
+    OrderPageComponent
+  ]
 })
 export class OrderAreaModule {
 }

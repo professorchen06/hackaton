@@ -1,1 +1,21 @@
-<p>order-page works!</p>
+<div class="order-page-container">
+  <ng-container *ngIf="state | async as state">
+    <div class="container" [ngSwitch]="state">
+      <section class="section" *ngSwitchCase="states.Unknown">
+        <p>Loading State</p>
+      </section>
+
+      <section class="section" *ngSwitchCase="states.ProductSelection">
+        <p>ProductSelection State</p>
+      </section>
+
+      <section class="section" *ngSwitchCase="states.Overview">
+        <p>Overview State</p>
+      </section>
+
+      <section class="section" *ngSwitchCase="states.Complete">
+        <p>Complete State</p>
+      </section>
+    </div>
+  </ng-container>
+</div>
