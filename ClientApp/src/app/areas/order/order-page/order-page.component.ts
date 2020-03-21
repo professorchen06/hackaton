@@ -16,4 +16,16 @@ export class OrderPageComponent {
   ) {
     this.state = orderStateService.observable();
   }
+
+  startCheckout() {
+    this.orderStateService.startCheckout();
+  }
+
+  completeOrder() {
+    this.orderStateService.completeOrder();
+  }
+
+  startProductSelection() {
+    this.orderStateService.startProductSelection();
+  }
 }
