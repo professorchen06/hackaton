@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ProductsService } from '../products.service';
-import { Product} from "../product";
+import { ProductsService } from '../../../../products.service';
+import { Product} from "../../../../product";
 import { MatSort } from '@angular/material/sort';
+import { OrderStateService } from '../order-state.service';
 
 @Component({
   selector: 'app-item-list',
@@ -10,7 +11,7 @@ import { MatSort } from '@angular/material/sort';
 })
 export class ItemListComponent implements OnInit {
   public products: Product[];
-  constructor(public productsE: ProductsService) { 
+  constructor(public productsE: ProductsService, private readonly orderStateService:OrderStateService) {
     this.products = productsE.products;
   }
   columnsToDisplay = ['name','count','price', 'pricemult'];
@@ -18,4 +19,7 @@ export class ItemListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addProduct() {
+    this.orderStateService.startProductSelection()
+  }
 }

@@ -37,4 +37,4 @@
       <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
       <tr mat-row *matRowDef="let product; columns: columnsToDisplay"></tr>
 </table>
-<button onclick="alert('clicked')">+</button>
+<button (click)="addProduct()">+</button>
