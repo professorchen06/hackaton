@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
+import {Order, OrderItem} from '../order.model';
 import {OrderStates, OrderStateService} from './order-state.service';
 
 @Component({
@@ -10,6 +11,8 @@ import {OrderStates, OrderStateService} from './order-state.service';
 export class OrderPageComponent {
   states = OrderStates;
   readonly state: Observable<OrderStates>;
+
+  order: Order = {orderItems: []};
 
   constructor(
     private readonly orderStateService: OrderStateService,
@@ -27,5 +30,9 @@ export class OrderPageComponent {
 
   startProductSelection() {
     this.orderStateService.startProductSelection();
+  }
+
+  addOrderItem(orderItem: OrderItem): void {
+    this.order.orderItems.push(orderItem);
   }
 }

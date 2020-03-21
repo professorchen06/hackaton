@@ -1,13 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {OrdersGateway, PostOrderReq} from '../../../core/backend-api/gateways/orders.gateway';
-
-export interface IOrder {
-  product: string;
-  items: number;
-  maxPricePerItem: number;
-  comment: string;
-}
+import { OrderItem } from '../order.model';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +12,7 @@ export class OrdersService {
   ) {
   }
 
-  postOrder(orders: IOrder[]): Observable<void> {
+  postOrder(orders: OrderItem[]): Observable<void> {
     const params: PostOrderReq = {
       orders: orders.map((order) => {
         return {
