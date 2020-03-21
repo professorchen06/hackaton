@@ -13,9 +13,6 @@ import { OrderFormComponent } from './order-page/order-form/order-form.component
     ReactiveFormsModule,
   ],
   declarations: [OrderPageComponent, OrderFormComponent],
-  exports: [
-    OrderPageComponent
-  ]
 })
 export class OrderAreaModule {
 }
