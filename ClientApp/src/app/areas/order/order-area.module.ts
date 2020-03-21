@@ -4,15 +4,19 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OrderAreaRoutingModule} from './order-area-routing.module';
 import {OrderPageComponent} from './order-page/order-page.component';
 import { OrderFormComponent } from './order-page/order-form/order-form.component';
-
+import { ItemListComponent } from 'src/app/item-list/item-list.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatSort, MatSortModule} from '@angular/material/sort';
 @NgModule({
   imports: [
     OrderAreaRoutingModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatSortModule,
   ],
-  declarations: [OrderPageComponent, OrderFormComponent],
+  declarations: [OrderPageComponent, OrderFormComponent, ItemListComponent],
 })
 export class OrderAreaModule {
 }

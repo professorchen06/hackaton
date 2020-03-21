@@ -11,6 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BackendApiModule} from './core/backend-api/backend-api.module';
 import {LayoutComponent} from './layout/layout.component';
+import {MatTableModule} from '@angular/material/table'
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {LayoutComponent} from './layout/layout.component';
 
     MatMenuModule,
     MatIconModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
