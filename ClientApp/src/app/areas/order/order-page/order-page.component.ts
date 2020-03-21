@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {Observable} from 'rxjs';
+import {OrderStates, OrderStateService} from './order-state.service';
 
 @Component({
   selector: 'app-order-page',
@@ -6,6 +8,12 @@ import {Component} from '@angular/core';
   styleUrls: ['./order-page.component.scss'],
 })
 export class OrderPageComponent {
-  constructor() {
+  states = OrderStates;
+  readonly state: Observable<OrderStates>;
+
+  constructor(
+    private readonly orderStateService: OrderStateService,
+  ) {
+    this.state = orderStateService.observable();
   }
 }

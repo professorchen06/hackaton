@@ -4,7 +4,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OrderAreaRoutingModule} from './order-area-routing.module';
 import {OrderPageComponent} from './order-page/order-page.component';
 
-
 @NgModule({
   imports: [
     OrderAreaRoutingModule,
