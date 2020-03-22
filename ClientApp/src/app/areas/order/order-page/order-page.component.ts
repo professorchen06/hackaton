@@ -5,7 +5,7 @@ import { Order, OrderItem } from '../order.model';
 import { OrderStates, OrderStateService } from './order-state.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ConfirmOrderModalContentComponent } from '../confirm-order-modal-content/confirm-order-modal-content.component';
-import { OrdersService } from './orders.service';
+import { OrdersService } from '../../../orders.service';
 import { switchMap } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 

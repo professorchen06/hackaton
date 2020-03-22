@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {map} from 'rxjs/operators';
-import {IOrderResponse, OrdersGateway, PostOrderReq} from '../../../core/backend-api/gateways/orders.gateway';
-import {Order} from '../order.model';
+import {IOrderResponse, OrdersGateway, PostOrderReq} from './core/backend-api/gateways/orders.gateway';
+import {Order} from './areas/order/order.model';
 
 @Injectable({
   providedIn: 'root',
@@ -15,23 +15,23 @@ export class OrdersService {
 
   ordersMock = [
     {
-      id: 1, orderItems: [
+      id: '1', orderItems: [
         {
-          id: 2,
+          id: '2',
           product: 'name',
           items: 13,
           maxPricePerItem: 45,
           comment: 'comment',
         },
         {
-          id: 3,
+          id: '3',
           product: 'Auto',
           items: 1,
           maxPricePerItem: 320,
           comment: 'Ja warum denn nicht?',
         },
         {
-          id: 4,
+          id: '4',
           product: 'Klopapier',
           items: 99,
           maxPricePerItem: 318,
@@ -40,23 +40,23 @@ export class OrdersService {
       ],
     },
     {
-      id: 2, orderItems: [
+      id: '2', orderItems: [
         {
-          id: 5,
+          id: '5',
           product: 'Apfel',
           items: 2,
           maxPricePerItem: 3,
           comment: 'Nicht die grünen',
         },
         {
-          id: 6,
+          id: '6',
           product: 'Birne',
           items: 1,
           maxPricePerItem: 320,
           comment: 'Ja warum denn nicht?',
         },
         {
-          id: 7,
+          id: '7',
           product: 'Schokolade',
           items: 4,
           maxPricePerItem: 2,
@@ -64,7 +64,7 @@ export class OrdersService {
         },
       ],
     },
-  ] as Order[];
+  ];
 
   postOrder(order: Order): Observable<IOrderResponse[]> {
     const params: PostOrderReq[] =
