@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { OrdersOverviewComponent } from './order-overview/orders-overview.component';
 @NgModule({
   imports: [
     OrderAreaRoutingModule,
@@ -29,7 +30,13 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarModule } from '@
     MatIconModule,
     MatSnackBarModule
   ],
-  declarations: [OrderPageComponent, OrderFormComponent, ItemListComponent, ConfirmOrderModalContentComponent],
+  declarations: [
+    OrderPageComponent,
+    OrderFormComponent,
+    ItemListComponent,
+    ConfirmOrderModalContentComponent,
+    OrdersOverviewComponent,
+  ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
   ]
