@@ -38,8 +38,6 @@ export class OrderPageComponent implements AfterViewInit{
     });
   }
 
-
-
   startCheckout() {
     this.orderStateService.startCheckout();
   }
@@ -56,8 +54,6 @@ export class OrderPageComponent implements AfterViewInit{
     this.order.orderItems.push(orderItem);
   }
 
-
-  // Bestellbestätigung BEGIN
   openDialog(): void {
     const dialogRef = this.dialog.open(ConfirmOrderModalContentComponent, {
       width: 'auto',
@@ -65,22 +61,22 @@ export class OrderPageComponent implements AfterViewInit{
     });
 
     dialogRef.afterClosed().pipe(
-      switchMap((result: any) => {
-        if (typeof result === "undefined" || result === false) {
+      switchMap((result: undefined | boolean) => {
+        if (!result) {
           return of(false);
         }
+
         return this.ordersService.postOrder(this.order);
       })
     ). subscribe(
-      (result: boolean|void) => {
-        if (result !== false) {
+      (result: boolean | undefined) => {
+        if (!!result) {
           this.snackBar.open('Deine Bestellung wurde aufgenommen!');
         }
       },
       () => {
-        this.snackBar.open('Bei der Aufnahme deiner Bestellung ist ein Fehler aufgetreten.')
+        this.snackBar.open('Bei der Aufnahme deiner Bestellung ist ein Fehler aufgetreten.');
       }
     );
   }
-  // Bestellbestätigung END
 }
