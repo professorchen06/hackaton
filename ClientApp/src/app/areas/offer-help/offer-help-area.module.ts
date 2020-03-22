@@ -26,7 +26,7 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarModule } from '@
     MatIconModule,
     MatSnackBarModule
   ],
-  declarations: [OfferHelpPageComponent, ],
+  declarations: [OfferHelpPageComponent],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
   ]
