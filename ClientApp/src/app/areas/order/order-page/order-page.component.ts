@@ -72,6 +72,7 @@ export class OrderPageComponent implements AfterViewInit{
       (result: boolean | undefined) => {
         if (!!result) {
           this.snackBar.open('Deine Bestellung wurde aufgenommen!');
+          this.completeOrder();
         }
       },
       () => {
