@@ -1,3 +1,4 @@
+<h3>Offene Lieferungen</h3>
 <div *ngIf="orders$ | async as orders; else noOrdersAvailable">
   <ng-container *ngIf="orders.length > 0; else noOrdersAvailable">
     <ng-container *ngFor="let order of orders">
