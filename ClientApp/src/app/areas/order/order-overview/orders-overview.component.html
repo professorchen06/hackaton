@@ -1,7 +1,28 @@
 <div class="overview">
-  <div class="orders">
-    <div class="orderItems">
+  <h2>Bisherige Bestellungen</h2>
 
-    </div>
-  </div>
+  <ng-container *ngIf="orders | async as orders">
+    <mat-card class="orders" *ngFor="let order of orders">
+      <mat-accordion [multi]="false">
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Bestellung Nr. {{order.id}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-card-content class="orderItems" *ngFor="let orderItem of order.orderItems">
+            <p>{{orderItem.items}}x {{orderItem.product}}</p>
+            <p>{{orderItem.maxPricePerItem}}€/Stk</p>
+            <p *ngIf="orderItem.comment">Notiz: {{orderItem.comment}}</p>
+            <hr>
+          </mat-card-content>
+        </mat-expansion-panel>
+
+        <mat-card-actions>
+          <button mat-button>Bestellung anzeigen</button>
+        </mat-card-actions>
+      </mat-accordion>
+    </mat-card>
+  </ng-container>
 </div>

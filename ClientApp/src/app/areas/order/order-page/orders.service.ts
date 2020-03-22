@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {IOrderResponse, OrdersGateway, PostOrderReq} from '../../../core/backend-api/gateways/orders.gateway';
 import {Order} from '../order.model';

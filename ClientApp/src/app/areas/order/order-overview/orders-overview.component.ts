@@ -10,6 +10,7 @@ import {Order} from '../order.model';
 })
 export class OrdersOverviewComponent implements OnInit {
   private orders: Observable<Order[]>;
+  panelOpenState = false;
 
   constructor(
     private readonly ordersService: OrdersService,
