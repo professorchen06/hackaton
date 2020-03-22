@@ -35,7 +35,7 @@ export class OrderPageComponent implements AfterViewInit{
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      this.orderStateService.completeOrder();
+      this.orderStateService.startCheckout();
     });
   }
 
