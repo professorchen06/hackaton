@@ -13,6 +13,7 @@ import {MatSort, MatSortModule} from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   imports: [
     OrderAreaRoutingModule,
@@ -26,8 +27,12 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatDialogModule,
     MatIconModule,
+    MatSnackBarModule
   ],
   declarations: [OrderPageComponent, OrderFormComponent, ItemListComponent, ConfirmOrderModalContentComponent],
+  providers: [
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
+  ]
 })
 export class OrderAreaModule {
 }

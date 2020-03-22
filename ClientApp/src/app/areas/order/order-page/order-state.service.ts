@@ -26,16 +26,13 @@ export class OrderStateService {
 
   startProductSelection() {
     this.currentState.next(OrderStates.ProductSelection);
-    console.log(this.currentState);
   }
 
   startCheckout() {
     this.currentState.next(OrderStates.Overview);
-    console.log(this.currentState);
   }
 
   completeOrder() {
     this.currentState.next(OrderStates.Complete);
-    console.log(this.currentState);
   }
 }

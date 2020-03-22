@@ -1,9 +1,12 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Order, OrderItem } from '../order.model';
 import { OrderStates, OrderStateService } from './order-state.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ConfirmOrderModalContentComponent } from '../confirm-order-modal-content/confirm-order-modal-content.component';
+import { OrdersService } from './orders.service';
+import { switchMap } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-order-page',
@@ -22,13 +25,17 @@ export class OrderPageComponent implements AfterViewInit{
 
   constructor(
     private readonly orderStateService: OrderStateService,
+    private readonly ordersService: OrdersService,
+    private readonly snackBar: MatSnackBar,
     public dialog: MatDialog,
   ) {
     this.state = orderStateService.observable();
   }
 
   ngAfterViewInit(): void {
-    this.orderStateService.startCheckout();
+    setTimeout(() => {
+      this.orderStateService.startCheckout();
+    });
   }
 
 
@@ -57,10 +64,23 @@ export class OrderPageComponent implements AfterViewInit{
       data: { confirmedOrder: this.confirmedOrder }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (typeof result === "undefined") return;
-      this.confirmedOrder = result;
-    });
+    dialogRef.afterClosed().pipe(
+      switchMap((result: any) => {
+        if (typeof result === "undefined" || result === false) {
+          return of(false);
+        }
+        return this.ordersService.postOrder(this.order);
+      })
+    ). subscribe(
+      (result: boolean|void) => {
+        if (result !== false) {
+          this.snackBar.open('Deine Bestellung wurde aufgenommen!');
+        }
+      },
+      () => {
+        this.snackBar.open('Bei der Aufnahme deiner Bestellung ist ein Fehler aufgetreten.')
+      }
+    );
   }
   // Bestellbestätigung END
 }
