@@ -4,7 +4,8 @@ import {startWith} from 'rxjs/operators';
 
 export enum OfferHelpStates {
   Unknown = 1,
-  FindOrders = 2
+  FindOrders = 2,
+  SeeOrders = 3,
 }
 
 @Injectable({
