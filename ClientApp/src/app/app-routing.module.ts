@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {offerHelpAreaPluggable} from './areas/offer-help/offer-help-area.pluggable';
 import { orderAreaPluggable } from './areas/order/order-area.pluggable';
 import { FirstViewComponent } from './first-view/first-view.component';
 
@@ -9,6 +10,7 @@ const routes: Routes = [
     canActivate: [],
     children: [
       ...orderAreaPluggable.lazyRoutes,
+      ...offerHelpAreaPluggable.lazyRoutes,
       { path: '**', component: FirstViewComponent }
     ],
   },

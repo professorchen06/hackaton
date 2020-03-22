@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { OfferHelpAreaRoutingModule } from './offerhelp-area-routing.module';
-import { OfferHelpPageComponent } from './offerhelp-page/offerhelp-page.component';
+import { OfferHelpAreaRoutingModule } from './offer-help-area-routing.module';
+import { OfferHelpPageComponent } from './offer-help-page/offer-help-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';

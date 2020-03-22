@@ -1,5 +1,5 @@
 import {TestBed} from '@angular/core/testing';
-import {OfferHelpStateService} from './offerhelp-state.service';
+import {OfferHelpStateService} from './offer-help-state.service';
 
 describe('OfferHelpStateService', () => {
   let service: OfferHelpStateService;

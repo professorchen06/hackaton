@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {OfferHelpPageComponent} from './offerhelp-page/offerhelp-page.component';
+import {OfferHelpPageComponent} from './offer-help-page/offer-help-page.component';
 
 const routes: Routes = [
   {

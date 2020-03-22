@@ -1,6 +1,6 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {OfferHelpPageComponent} from './offerhelp-page.component';
-import {OfferHelpStateService} from './offerhelp-state.service';
+import {OfferHelpPageComponent} from './offer-help-page.component';
+import {OfferHelpStateService} from './offer-help-state.service';
 
 describe('OfferHelpPageComponent', () => {
   let component: OfferHelpPageComponent;
