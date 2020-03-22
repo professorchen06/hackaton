@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {OrdersGateway, PostOrderReq} from '../../../core/backend-api/gateways/orders.gateway';
-import { Order, OrderItem } from '../order.model';
+import {Order} from '../order.model';
 
 @Injectable({
   providedIn: 'root',
@@ -25,5 +25,37 @@ export class OrdersService {
     };
 
     return this.ordersGateway.postOrders(params);
+  }
+
+  getOrders(): Observable<Order[]> {
+    return of([
+      {
+        id: 1, orderItems: [
+          {
+            id: 2,
+            product: 'name',
+            items: 99,
+            maxPricePerItem: 12,
+            comment: 'comment',
+          },
+        ],
+      },
+    ]);
+    // return this.ordersGateway.getOrders();
+    // .pipe(
+    // map((orders) => {
+    //   return {
+    //     id: undefined,
+    //     orderItems: response.map((orderItem) => {
+    //       return {
+    //         id: orderItem.id,
+    //         product: orderItem.product,
+    //         items: orderItem.items,
+    //         maxPricePerItem: orderItem.maximum_price_per_item,
+    //         comment: orderItem.comment,
+    //       }
+    //     })
+    //   };
+    // })
   }
 }

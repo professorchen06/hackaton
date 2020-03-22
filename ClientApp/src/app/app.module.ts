@@ -13,7 +13,7 @@ import { BackendApiModule } from './core/backend-api/backend-api.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
