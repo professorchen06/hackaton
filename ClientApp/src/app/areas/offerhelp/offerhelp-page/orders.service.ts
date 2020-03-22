@@ -13,15 +13,16 @@ export class OrdersService {
   }
 
   postOrder(order: Order): Observable<void> {
-    const params: PostOrderReq[] =
-      order.orderItems.map((order) => {
+    const params: PostOrderReq = {
+      orders: order.orderItems.map((order) => {
         return {
           product: order.product,
           items: order.items,
           maximum_price_per_item: order.maxPricePerItem,
           comment: order.comment,
         };
-      });
+      }),
+    };
 
     return this.ordersGateway.postOrders(params);
   }
