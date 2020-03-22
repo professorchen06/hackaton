@@ -18,4 +18,7 @@ export class FindOrdersOverviewComponent implements OnInit {
     this.orders$ = this.ordersService.getOrders();
   }
 
+  claimOrder(order: Order) {
+    this.ordersService.claimOrder(order);
+  }
 }
