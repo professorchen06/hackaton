@@ -1,10 +1,15 @@
 <div class="offer-help-page-container">
   <p>offer-help-page works!</p>
+  <ng-container>
+    <app-offer-help-list></app-offer-help-list>
+  </ng-container>
   <ng-container *ngIf="state | async as state">
     <div class="container" [ngSwitch]="state">
       <section class="section" *ngSwitchCase="states.Unknown">
         <p>Loading State</p>
       </section>
+      
     </div>
   </ng-container>
+  
 </div>

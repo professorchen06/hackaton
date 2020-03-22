@@ -11,6 +11,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { OfferHelpListComponent } from './offer-help-page/offer-help-list/offer-help-list.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
   imports: [
     OfferHelpAreaRoutingModule,
@@ -24,9 +26,10 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarModule } from '@
     MatButtonModule,
     MatDialogModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatExpansionModule
   ],
-  declarations: [OfferHelpPageComponent],
+  declarations: [OfferHelpPageComponent, OfferHelpListComponent],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
   ]

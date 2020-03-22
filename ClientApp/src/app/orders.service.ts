@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
-import {IOrderResponse, OrdersGateway, PostOrderReq} from '../../../core/backend-api/gateways/orders.gateway';
-import {Order} from '../order.model';
+import {IOrderResponse, OrdersGateway, PostOrderReq} from './core/backend-api/gateways/orders.gateway';
+import {Order} from './order.model';
 
 @Injectable({
   providedIn: 'root',
