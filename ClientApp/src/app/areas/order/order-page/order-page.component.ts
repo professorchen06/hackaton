@@ -1,5 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import {IOrderResponse} from '../../../core/backend-api/gateways/orders.gateway';
 import { Order, OrderItem } from '../order.model';
 import { OrderStates, OrderStateService } from './order-state.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
@@ -69,7 +70,7 @@ export class OrderPageComponent implements AfterViewInit{
         return this.ordersService.postOrder(this.order);
       })
     ). subscribe(
-      (result: boolean | undefined) => {
+      (result: boolean | IOrderResponse[]) => {
         if (!!result) {
           this.snackBar.open('Deine Bestellung wurde aufgenommen!');
           this.completeOrder();

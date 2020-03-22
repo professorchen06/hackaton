@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
-import {OrdersGateway, PostOrderReq} from '../../../core/backend-api/gateways/orders.gateway';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {IOrderResponse, OrdersGateway, PostOrderReq} from '../../../core/backend-api/gateways/orders.gateway';
 import {Order} from '../order.model';
 
 @Injectable({
@@ -12,14 +13,14 @@ export class OrdersService {
   ) {
   }
 
-  postOrder(order: Order): Observable<void> {
+  postOrder(order: Order): Observable<IOrderResponse[]> {
     const params: PostOrderReq[] =
-      order.orderItems.map((order) => {
+      order.orderItems.map((orderItem) => {
         return {
-          product: order.product,
-          items: order.items,
-          maximum_price_per_item: order.maxPricePerItem,
-          comment: order.comment,
+          product: orderItem.product,
+          items: orderItem.items,
+          maximum_price_per_item: orderItem.maxPricePerItem,
+          comment: orderItem.comment,
         };
       });
 
@@ -27,34 +28,23 @@ export class OrdersService {
   }
 
   getOrders(): Observable<Order[]> {
-    return of([
-      {
-        id: 1, orderItems: [
-          {
-            id: 2,
-            product: 'name',
-            items: 99,
-            maxPricePerItem: 12,
-            comment: 'comment',
-          },
-        ],
-      },
-    ]);
-    // return this.ordersGateway.getOrders();
-    // .pipe(
-    // map((orders) => {
-    //   return {
-    //     id: undefined,
-    //     orderItems: response.map((orderItem) => {
-    //       return {
-    //         id: orderItem.id,
-    //         product: orderItem.product,
-    //         items: orderItem.items,
-    //         maxPricePerItem: orderItem.maximum_price_per_item,
-    //         comment: orderItem.comment,
-    //       }
-    //     })
-    //   };
-    // })
+    return this.ordersGateway.getOrders().pipe(
+      map((orders) => {
+        return orders.map((order) => {
+          return {
+            id: order.id,
+            orderItems: order.items.map((orderItem) => {
+              return {
+                id: orderItem.id,
+                product: orderItem.product,
+                items: orderItem.items,
+                maxPricePerItem: orderItem.maximum_price_per_item,
+                comment: orderItem.comment,
+              };
+            }),
+          };
+        });
+      }),
+    );
   }
 }
