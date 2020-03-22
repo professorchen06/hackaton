@@ -9,7 +9,8 @@ import {Order} from '../../../order.model';
   styleUrls: ['./orders-overview.component.scss'],
 })
 export class OrdersOverviewComponent implements OnInit {
-  private orders: Observable<Order[]>;
+  orders: Observable<Order[]>;
+  panelOpenState = false;
 
   constructor(
     private readonly ordersService: OrdersService,

@@ -4,6 +4,7 @@ import {startWith} from 'rxjs/operators';
 
 export enum OfferHelpStates {
   Unknown = 1,
+  FindOrders = 2
 }
 
 @Injectable({
@@ -19,5 +20,9 @@ export class OfferHelpStateService {
     return this.currentState.pipe(
       startWith(OfferHelpStates.Unknown),
     );
+  }
+
+  startFindOrders(): void {
+    this.currentState.next(OfferHelpStates.FindOrders);
   }
 }
