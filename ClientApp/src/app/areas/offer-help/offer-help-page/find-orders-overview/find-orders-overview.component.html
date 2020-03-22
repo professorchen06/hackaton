@@ -34,3 +34,8 @@
 <ng-template #noOrdersAvailable>
   <p>Ruh dich aus, es gibt derzeit keine offenen Anfragen.</p>
 </ng-template>
+<div class="material-button">
+  <button mat-fab (click)="changeState()" [color]="'primary'">
+    <span class="material-icons">done</span>
+  </button>
+</div>

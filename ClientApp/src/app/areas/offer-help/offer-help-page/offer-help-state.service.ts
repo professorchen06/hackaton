@@ -26,4 +26,8 @@ export class OfferHelpStateService {
   startFindOrders(): void {
     this.currentState.next(OfferHelpStates.FindOrders);
   }
+
+  startSeeOrders(): void {
+    this.currentState.next(OfferHelpStates.SeeOrders);
+  }
 }

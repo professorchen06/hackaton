@@ -16,7 +16,7 @@ export class OfferHelpListComponent implements OnInit {
   public columnsToDisplay: String[];
   constructor(public readonly ordersService: OrdersService ) { 
 
-    this.orders = this.ordersService.getOrders();
+    this.orders = this.ordersService.getClaimedOrders();
     this.columnsToDisplay = ["product", "items", "maxPricePerItem", "comment"];
     /*this.orders = of([{id: 'foo', orderItems: [{
       id: '10',
